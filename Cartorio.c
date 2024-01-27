@@ -121,13 +121,24 @@ int main() //Função principal
     {
     int opcao=0; //Defininindo variáveis
     int laco=1; 
+    char senhadigitada[10]="a";
+    int comparacao;
     
-    for(laco=1;laco=1;)//Comando para repetição de operação
+    printf("### Cartório da EBAC ###\n\n");
+    printf("Login de administrador!\n\nDigite a sua senha:\n");
+    scanf("%s", senhadigitada); 
+    
+    comparacao = strcmp(senhadigitada, "admin");
+    
+    if(comparacao == 0)
     {
+        system("cls");
+        for(laco=1;laco=1;)//Comando para repetição de operação
+        {
        
-       system("cls"); //Responsável por limpar a tela
+        system("cls"); //Responsável por limpar a tela
        
-       setlocale(LC_ALL, "Portuguese"); //Definindo linguagem
+        setlocale(LC_ALL, "Portuguese"); //Definindo linguagem
     
        printf("### Cartório da EBAC ###\n\n"); //Inicio do menu - Como aparecem as opções ao cliente
        printf(" Escolha a opção desejada no menu:\n\n");
@@ -166,8 +177,11 @@ int main() //Função principal
             printf("Essa opção não está disponível!\n");
             system("pause");
             break;
-        }
-    
-       
+        } //fim da seleção
+      }    
+    }
+    else
+        printf("Senha incorreta!"); 
+
 }
-}
+
